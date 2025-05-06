@@ -21,6 +21,16 @@
       </div>
     </div>
   </div>
+<script>
+  let aura = 50;
+  const auraElement = document.getElementById('aura');
 
+  function changerAura(valeur) {
+    aura += valeur;
+    if (aura > 100) aura = 100;
+    if (aura < 0) aura = 0;
+    auraElement.textContent = aura;
+  }
+</script>
 </body>
 </html>
