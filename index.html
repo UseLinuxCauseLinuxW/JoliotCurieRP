@@ -9,28 +9,35 @@
 <body style="background-image: url('images/blabla.jpg'); background-size: cover; background-position: center;">
 
   <audio src="musique.mp3" autoplay loop></audio>
+
   <div id="aura-container">
-  Aura : <span id="aura">50</span> / 100
-</div>
+    Aura : <span id="aura">50</span> / 100
+  </div>
 
   <div class="overlay">
     <div class="dialogue-box">
       <p>Bienvenue à Joliot Curie RP, un jeu où se mêlent action et stratégie. Ce jeu consiste à choisir une des différentes propositions du jeu. Vos choix définiront votre chemin et même votre fin. Bonne partie! (Crédits : Ali et Lyam)</p>
       <div class="buttons">
         <a href="debut.html">OK!</a>
+        <!-- Exemple pour tester -->
+        <button onclick="changerAura(10)">+10 Aura</button>
+        <button onclick="changerAura(-5)">-5 Aura</button>
       </div>
     </div>
   </div>
-<script>
-  let aura = 50;
-  const auraElement = document.getElementById('aura');
 
-  function changerAura(valeur) {
-    aura += valeur;
-    if (aura > 100) aura = 100;
-    if (aura < 0) aura = 0;
+  <script>
+    let aura = parseInt(localStorage.getItem('aura')) || 50;
+    const auraElement = document.getElementById('aura');
     auraElement.textContent = aura;
-  }
-</script>
+
+    function changerAura(valeur) {
+      aura += valeur;
+      if (aura > 100) aura = 100;
+      if (aura < 0) aura = 0;
+      auraElement.textContent = aura;
+      localStorage.setItem('aura', aura);
+    }
+  </script>
 </body>
 </html>
