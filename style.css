@@ -3,6 +3,9 @@ body, html {
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center;     /* Centre verticalement */
 }
 
 .dialogue-box {
