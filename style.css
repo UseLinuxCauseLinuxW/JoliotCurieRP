@@ -5,21 +5,6 @@ body, html {
   font-family: Arial, sans-serif;
 }
 
-body {
-  background-image: url("ton-image.jpg"); /* Remplace par ton image */
-  background-size: cover;
-  background-position: center;
-}
-
-.overlay {
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0,0,0,0.5); /* Assombrit l’image pour le texte */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .dialogue-box {
   background: white;
   padding: 2rem;
