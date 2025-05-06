@@ -32,3 +32,13 @@ body, html {
 .buttons a:hover {
   background: #2980b9;
 }
+
+#aura-container {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+}
