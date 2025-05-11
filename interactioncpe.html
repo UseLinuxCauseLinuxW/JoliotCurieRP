@@ -3,21 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Après avoir poussé le CPE</title>
+  <title>Accueil - Joliot Curie RP</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-image: url('images/blabla.jpg'); background-size: cover; background-position: center;">
 
-  <audio src="perdre.html.mp3" autoplay loop></audio>
+  <audio src="ambianceecole.mp3" autoplay loop></audio>
+
+  <div id="aura-container">
+    Aura : <span id="aura">50</span> / 100
+  </div>
 
   <div class="overlay">
     <div class="dialogue-box">
-      <p>Tu te fait gronder mais c'est tellement harr le CPE signe un mot d'excuse pour toi.</p>
+      <p>Le cpe te gronde mais c'est tellement harr que il te laisse partir avec un mot d'excuse.</p>
       <div class="buttons">
-        <a href="index.html">Recommencer</a>
+        <a href="debut.html">OK!</a>
+        <!-- Exemple pour tester -->
+        <button onclick="changerAura(0)">+0 Aura</button>
+        <button onclick="changerAura(5)">-0 Aura</button>
       </div>
     </div>
   </div>
 
+  <script>
+    let aura = parseInt(localStorage.getItem('aura')) || 50;
+    const auraElement = document.getElementById('aura');
+    auraElement.textContent = aura;
+
+    function changerAura(valeur) {
+      aura += valeur;
+      if (aura > 100) aura = 100;
+      if (aura < 0) aura = 0;
+      auraElement.textContent = aura;
+      localStorage.setItem('aura', aura);
+    }
+  </script>
 </body>
 </html>
