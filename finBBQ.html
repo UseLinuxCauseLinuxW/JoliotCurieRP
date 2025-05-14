@@ -5,8 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BBQ</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .overlay {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
-<body style="background-image: url('émeutejoliot.jpg'); background-size: cover; background-position: center;">
+<body>
+
+  <video id="background-video" autoplay loop>
+    <source src="" type="video/mp4">
+  </video>
 
   <audio src="finbbq.html.mp3" autoplay loop></audio>
 
@@ -19,7 +46,6 @@
       <p>Pourquoi faire</p>
       <div class="buttons">
         <a href="index.html">Reccomencer.</a>
-        <!-- Exemple pour tester -->
         <button onclick="changerAura(0)">+0 Aura</button>
         <button onclick="changerAura(0)">-0 Aura</button>
       </div>
@@ -40,11 +66,12 @@
     }
 
     function resetAura() {
-  aura = 50;
-  auraElement.textContent = aura;
-  localStorage.setItem('aura', aura);
-}
-
+      aura = 50;
+      auraElement.textContent = aura;
+      localStorage.setItem('aura', aura);
+    }
   </script>
+
 </body>
 </html>
+
