@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sport</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url('gymnase.jpg'); background-size: cover; background-position: center;">
+
+  <audio src="audioecole.html.mp3" autoplay loop></audio>
+
+  <div id="aura-container">
+    Aura : <span id="aura">50</span> / 100
+  </div>
+
+  <div class="overlay">
+    <div class="dialogue-box">
+      <p>Tu obtiens un 20/20.</p>
+      <div class="buttons">
+        <a href="toilette.html">Aller en NSI.</a>
+        <!-- Exemple pour tester -->
+        <button onclick="changerAura(50)">+50 Aura</button>
+        <button onclick="changerAura(0)">-0 Aura</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let aura = parseInt(localStorage.getItem('aura')) || 50;
+    const auraElement = document.getElementById('aura');
+    auraElement.textContent = aura;
+
+    function changerAura(valeur) {
+      aura += valeur;
+      if (aura > 100) aura = 100;
+      if (aura < 0) aura = 0;
+      auraElement.textContent = aura;
+      localStorage.setItem('aura', aura);
+    }
+
+    function resetAura() {
+  aura = 50;
+  auraElement.textContent = aura;
+  localStorage.setItem('aura', aura);
+}
+
+  </script>
+</body>
+</html>
