@@ -3,12 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NSI</title>
+  <title>BBQ</title>
   <link rel="stylesheet" href="style.css">
-</head>
-<body style="background-image: url('Classe_joliot.jpg'); background-size: cover; background-position: center;">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
 
-  <audio src="audioecole.html.mp3" autoplay loop></audio>
+    #background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .overlay {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <video id="background-video" autoplay loop>
+    <source src="ninja.mp4" type="video/mp4">
+  </video>
+
+  <audio src="" autoplay loop></audio>
 
   <div id="aura-container">
     Aura : <span id="aura">50</span> / 100
@@ -16,10 +43,9 @@
 
   <div class="overlay">
     <div class="dialogue-box">
-      <p> Après t'ètre calmé, tu t'est rendu compte du vrai chemin de la spiritualité. Tu est allé voir sensei wu et tu est devenu le nouveau ninja vert.</p>
+      <p>Un voyage de mille lieues commence par un pas.</p>
       <div class="buttons">
-        <a href="index.html.html">Reccomencer.</a>
-        <!-- Exemple pour tester -->
+        <a href="index.html">Reccomencer.</a>
         <button onclick="changerAura(0)">+0 Aura</button>
         <button onclick="changerAura(0)">-0 Aura</button>
       </div>
@@ -40,11 +66,11 @@
     }
 
     function resetAura() {
-  aura = 50;
-  auraElement.textContent = aura;
-  localStorage.setItem('aura', aura);
-}
-
+      aura = 50;
+      auraElement.textContent = aura;
+      localStorage.setItem('aura', aura);
+    }
   </script>
+
 </body>
 </html>
